@@ -8,5 +8,12 @@ function addToSum(num){
     output.innerHTML = sum;
 }
 
+function evaluateSum(){
+    output.innerHTML = eval(sum);
+}
 
+function clearSum(){
+    sum = "";
+    output.innerHTML = sum;
+}
 

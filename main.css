@@ -1,6 +1,18 @@
 .btn {
   width: 100%;
-  height: 70%;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+#output {
+  height: 50px;
+  border-radius: 5px;
+  background-color: aqua;
+}
+
+.calculator {
+  max-width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
