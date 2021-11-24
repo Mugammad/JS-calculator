@@ -3,13 +3,13 @@ let sum = "";
 let output = document.querySelector("#output")
 
 function addToSum(num){
-    let result = sum.concat(num)
-    sum = result
+    sum = sum + num;
     output.innerHTML = sum;
 }
 
 function evaluateSum(){
-    output.innerHTML = eval(sum);
+    sum = eval(sum)
+    output.innerHTML = sum;
 }
 
 function clearSum(){
@@ -17,3 +17,7 @@ function clearSum(){
     output.innerHTML = sum;
 }
 
+function delChar(){
+    sum = sum.slice(0, -1)
+    output.innerHTML = sum;
+}
