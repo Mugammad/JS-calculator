@@ -5,16 +5,21 @@ let output = document.querySelector(".dialogue")
 function addToSum(num){
     sum = sum + num;
     output.innerHTML = sum;
+    if(sum != "1 + 1"){
+        talkText(sum)
+    }
 }
 
 function evaluateSum(){
+    dialogue.innerHTML = eval(sum);
+    talkText(sum)
     sum = eval(sum)
-    output.innerHTML = sum;
 }
 
 function clearSum(){
-    sum = "";
-    output.innerHTML = sum;
+    aniMode = talk;
+    sum = "Calculate something";
+    typeOut(sum);
 }
 
 function delChar(){
@@ -62,8 +67,7 @@ let aniMode = hey;
 let loopIndex = 0
 frameCount = 0;
 let dialogue = document.querySelector(".dialogue");
-dialogue.innerHTML = "Hey!";
-let me = "woah";
+dialogue.innerHTML = "Hey! I'm Cal.";
 
 // this does the typing Animation thing 
 function typeOut(sentence){
@@ -77,15 +81,22 @@ function typeOut(sentence){
     },70)
 }
 
+let sayHi = document.getElementById("sayHi")
 // this is where the words generate
 function talkText(answer){
-    if(answer == "Hi"){
-        aniMode = talk;
-        typeOut("Welcome, feel free to use the calculator")
-    } else if(answer != "Hi" && aniMode == smile){
-        aniMode = angryTalk;
-        typeOut(me);
+    if(answer == "Say hi"){
+        sayHi.classList.toggle("vanish");
+        aniMode = talk
+        typeOut("What do you need to calculate today?");
+    }else if(answer != "Say hi" && dialogue.innerHTML == "Hey! I'm Cal."){
+        sum = "";
+        aniMode = angryTalk
+        typeOut("Bro!? I said hi");
+    }else if(sum == "1 + 1"){
+        aniMode = surprised;
+        typeOut("seriously bro? You dont know?" + " it's " + eval(sum))
     }
+
 }
 
 

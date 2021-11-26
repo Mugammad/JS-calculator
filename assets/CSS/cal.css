@@ -19,3 +19,15 @@
   padding: 10px;
   bottom: 0;
 }
+
+#sayHi {
+  position: absolute;
+  top: 40vh;
+  width: 20%;
+}
+
+.vanish {
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
+}
