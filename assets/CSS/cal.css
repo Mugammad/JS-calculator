@@ -1,0 +1,21 @@
+
+
+.dialogue {
+  border-radius: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: #E7F9A9;
+  padding: 10px;
+  
+}
+
+.ai {
+  height: 50%;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  background-color: #BDA69E;
+  padding: 10px;
+  bottom: 0;
+}
