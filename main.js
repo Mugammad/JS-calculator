@@ -1,6 +1,6 @@
 let sum = "";
 
-let output = document.querySelector("#output")
+let output = document.querySelector(".dialogue")
 
 function addToSum(num){
     sum = sum + num;
