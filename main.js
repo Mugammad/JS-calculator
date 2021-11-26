@@ -26,7 +26,7 @@ function clearSum(){
 
 function delChar(){
     sum = sum.slice(0, -1)
-    output.innerHTML = sum;
+    dialogue.innerHTML = sum;
 }
 
 // start of ai funcionality and animation 
