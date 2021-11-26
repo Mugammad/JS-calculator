@@ -4,9 +4,14 @@
   margin-bottom: 10px;
 }
 
-#output {
+/* #output {
   height: 40%;
-}
+  width: 50%;
+  position: absolute;
+  top: 10vh;
+  color: #E7F9A9;
+  font-size: 3em;
+} */
 
 #outputer {
   height: 45vh;

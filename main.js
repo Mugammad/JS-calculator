@@ -1,25 +1,27 @@
 let sum = "";
 
-let output = document.querySelector(".dialogue")
+let output = document.querySelector("#output")
 
 function addToSum(num){
     sum = sum + num;
-    output.innerHTML = sum;
+    dialogue.innerHTML = sum;
     if(sum != "1 + 1"){
         talkText(sum)
     }
 }
 
 function evaluateSum(){
-    dialogue.innerHTML = eval(sum);
+    dialogue.innerHTML = "Answer is " + eval(sum);
+    aniMode = talkNumber;
     talkText(sum)
     sum = eval(sum)
 }
 
 function clearSum(){
     aniMode = talk;
-    sum = "Calculate something";
-    typeOut(sum);
+    sum = "";
+    dialogue.innerHTML = sum;
+    typeOut("Calculate something");
 }
 
 function delChar(){
@@ -56,6 +58,7 @@ let normal = [4,4]
 let hey = [4, 3]
 let smile = [3]
 let talk = [3, 4, 3, 4, 3, 4, 4, 3, 4, 3, 4, 4, 4]
+let talkNumber = [3, 4, 3, 4, 3, 4,]
 let angry = [0,0]
 let angryTalk = [1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0]
 let surprised = [5]
@@ -86,11 +89,12 @@ let sayHi = document.getElementById("sayHi")
 function talkText(answer){
     if(answer == "Say hi"){
         sayHi.classList.toggle("vanish");
+        sum = ""
         aniMode = talk
         typeOut("What do you need to calculate today?");
-    }else if(answer != "Say hi" && dialogue.innerHTML == "Hey! I'm Cal."){
+    }else if((answer == sum && aniMode == smile) || aniMode == angry){
         sum = "";
-        aniMode = angryTalk
+        aniMode = angryTalk;
         typeOut("Bro!? I said hi");
     }else if(sum == "1 + 1"){
         aniMode = surprised;
@@ -114,7 +118,7 @@ function talking(){
     loopIndex++
     if(loopIndex >= aniMode.length ){
         loopIndex = 0;
-        if (aniMode == talk){
+        if (aniMode == talk || aniMode == talkNumber){
             aniMode = normal;
         } else if(aniMode == hey) {
             aniMode = smile;
